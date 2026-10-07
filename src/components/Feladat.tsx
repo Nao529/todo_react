@@ -1,13 +1,16 @@
 //rfce
-import React from 'react'
+import React, { useContext } from 'react'
 import type { AllapotTipus, TodoTipus } from '../adat'
+import { TodoContext } from '../contexts/TodoContext'
 
 interface FeladatProps {
     elem: TodoTipus,
-    setAllapot:(index:number, allapot:AllapotTipus)=>void
+    index:number
 }
 
-function Feladat({elem, setAllapot, index}:FeladatProps) {
+function Feladat({elem, index}:FeladatProps) {
+    const {setAllapot}=useContexts(TodoContext);
+    
   return (
     <div className='todo'>
         <span className='szoveg'>{elem.tennivalo}</span>

@@ -3,12 +3,9 @@ import React from 'react'
 import Feladat from './Feladat'
 import type { AllapotTipus, TodoTipus } from '../adat'
 
-interface FeladatokProps {
-    lista: TodoTipus[],
-    setAllapot: (index:number, allapot:AllapotTipus)=>void
-}
-
-function Feladatok(lista, setAllapot) {
+function Feladatok() {
+    /* listát a contextből fogjuk megkapni */
+    const { lista } = useTodoContext();
   return (
     <div>
         {
